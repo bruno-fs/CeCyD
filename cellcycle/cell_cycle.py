@@ -1,8 +1,9 @@
 #!/usr/bin/env python
+from __future__ import division
 from math import *
 
 
-def run_calc(dt, c, m, g2edu, l, edu):
+def calculate(dt, c, m, g2edu, l, edu):
     # dt = 7.25
     # c = 0.0357
     # m = 0.037
@@ -46,7 +47,7 @@ def run_calc(dt, c, m, g2edu, l, edu):
     # calculo de G1
     Xg1 = dt-(Xc+Xm+Xg2+Xs)
     Xg1_ccu = Xg1/dt
-    # print 'Xg1: ' + str(round(Xg1,3)) + ' h or ' + str(round(Xg1_ccu,3)) + ' ccu'
+    # print 'Xg1: ' + str(round(Xg1, 3)) + ' h or ' + str(round(Xg1_ccu, 3)) + ' ccu'
 
     Xfase = Xc + Xm + Xg2 + Xs + Xg1
     Xfase_ccu = Xfase/dt
@@ -74,11 +75,11 @@ if __name__ == "__main__":
         l = input('Please enter a number between 0 and 1 for the percentage of EdU positive cells: ')
     edu = input('Please enter time of EdU pulse for positive cell counting (in hours): ')
 
-    a, Xc, Xc_ccu, Xm, Xm_ccu, Xg2, Xg2_ccu, Xs, Xs_ccu, Xg1, Xg1_ccu = run_calc(dt, c, m, g2edu, l, edu)
+    a, Xc, Xc_ccu, Xm, Xm_ccu, Xg2, Xg2_ccu, Xs, Xs_ccu, Xg1, Xg1_ccu = calculate(dt, c, m, g2edu, l, edu)
 
     print 'a:   ' + str(a)
-    print 'Xc:  ' + str(round(Xc,3)) + ' h or ' + str(round(Xc_ccu,3)) + ' ccu'
-    print 'Xm:  ' + str(round(Xm,3)) + ' h or ' + str(round(Xm_ccu,3)) + ' ccu'
-    print 'Xg2: ' + str(round(Xg2,3)) + ' h or ' + str(round(Xg2_ccu,3)) + ' ccu'
-    print 'Xs : ' + str(round(Xs,3)) + ' h or ' + str(round(Xs_ccu,3)) + ' ccu'
-    print 'Xg1: ' + str(round(Xg1,3)) + ' h or ' + str(round(Xg1_ccu,3)) + ' ccu'
+    print 'Xc:  ' + str(round(Xc, 3)) + ' h or ' + str(round(Xc_ccu, 3)) + ' ccu'
+    print 'Xm:  ' + str(round(Xm, 3)) + ' h or ' + str(round(Xm_ccu, 3)) + ' ccu'
+    print 'Xg2: ' + str(round(Xg2, 3)) + ' h or ' + str(round(Xg2_ccu, 3)) + ' ccu'
+    print 'Xs : ' + str(round(Xs, 3)) + ' h or ' + str(round(Xs_ccu, 3)) + ' ccu'
+    print 'Xg1: ' + str(round(Xg1, 3)) + ' h or ' + str(round(Xg1_ccu, 3)) + ' ccu'
