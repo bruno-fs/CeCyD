@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form class="horizontal-form" method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button class="btn btn-default" type="submit">Submit</button>
+
+  </form>
+{% endblock %}
