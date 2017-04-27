@@ -77,9 +77,17 @@ if __name__ == "__main__":
 
     a, Xc, Xc_ccu, Xm, Xm_ccu, Xg2, Xg2_ccu, Xs, Xs_ccu, Xg1, Xg1_ccu = calculate(dt, c, m, g2edu, l, edu)
 
-    print 'a:   ' + str(a)
-    print 'Xc:  ' + str(round(Xc, 3)) + ' h or ' + str(round(Xc_ccu, 3)) + ' ccu'
-    print 'Xm:  ' + str(round(Xm, 3)) + ' h or ' + str(round(Xm_ccu, 3)) + ' ccu'
-    print 'Xg2: ' + str(round(Xg2, 3)) + ' h or ' + str(round(Xg2_ccu, 3)) + ' ccu'
-    print 'Xs : ' + str(round(Xs, 3)) + ' h or ' + str(round(Xs_ccu, 3)) + ' ccu'
-    print 'Xg1: ' + str(round(Xg1, 3)) + ' h or ' + str(round(Xg1_ccu, 3)) + ' ccu'
+    output_str = '{:>3s}: {:0.3f} h / {:0.3f} ccu'
+    print('  a: {:0.5f}'.format(a))
+    print(output_str.format('G1', Xg1, Xg1_ccu))
+    print(output_str.format('S', Xs, Xs_ccu))
+    print(output_str.format('G2', Xg2, Xg2_ccu))
+    print(output_str.format('M', Xm, Xm_ccu))
+    print(output_str.format('C', Xc, Xc_ccu))
+
+    # print 'a:   ' + str(a)
+    # print 'Xc:  ' + str(round(Xc, 3)) + ' h or ' + str(round(Xc_ccu, 3)) + ' ccu'
+    # print 'Xm:  ' + str(round(Xm, 3)) + ' h or ' + str(round(Xm_ccu, 3)) + ' ccu'
+    # print 'Xg2: ' + str(round(Xg2, 3)) + ' h or ' + str(round(Xg2_ccu, 3)) + ' ccu'
+    # print 'Xs : ' + str(round(Xs, 3)) + ' h or ' + str(round(Xs_ccu, 3)) + ' ccu'
+    # print 'Xg1: ' + str(round(Xg1, 3)) + ' h or ' + str(round(Xg1_ccu, 3)) + ' ccu'
