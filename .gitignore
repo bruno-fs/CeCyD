@@ -1,0 +1,9 @@
+*.pyc
+*.zip
+*.sqlite3
+.idea/
+venv/
+**mo
+static/
+*.tar.gz
+.coverage
