@@ -21,28 +21,34 @@ class InputData(BootstrapForm):
     doubling_time = forms.FloatField(
         min_value=0,  # mudar p > 0
         required=True,
-        help_text='(in hours)')
+        help_text='h')
     cytokinesis = forms.FloatField(
-        min_value=0, max_value=1,
+        min_value=0, max_value=100,
         required=True,
-        label='Percentage of cells in cytokinesis')
+        label='Percentage of cells in cytokinesis',
+        help_text='%',
+    )
     mitosis = forms.FloatField(
-        min_value=0, max_value=1,
+        min_value=0, max_value=100,
         required=True,
-        label='Percentage of cells in mitosis')
-    g2edu = forms.FloatField(
+        label='Percentage of cells in mitosis',
+        help_text='%',
+    )
+    g2edu_time = forms.FloatField(
         min_value=0,
         required=True,
-        label='EdU pulse for G2 phase (in hours)',
-        help_text='(in hours)')
+        label='Minimum time to find 2 nuclei Edu-labeled in the same cell',
+        help_text='h')
     edu = forms.FloatField(
-        min_value=0, max_value=1,
-        label='Percentage of EdU positive cells')
+        min_value=0, max_value=100,
+        label='Percentage of positive cells after Edu pulse',
+        help_text='%',
+    )
     edu_time = forms.FloatField(
         min_value=0,
         required=True,
-        label='EdU pulse for positive cell counting',
-        help_text='(in hours)',
+        label='Edu pulse duration',
+        help_text='h',
     )
 
 

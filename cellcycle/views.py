@@ -1,3 +1,5 @@
+from __future__ import division
+
 from django.shortcuts import render
 
 from cellcycle.forms import InputData
@@ -11,10 +13,10 @@ def home(request):
 
         if form.is_valid():
             dt = form.cleaned_data['doubling_time']
-            c = form.cleaned_data['cytokinesis']
-            m = form.cleaned_data['mitosis']
-            g2edu = form.cleaned_data['g2edu']
-            l = form.cleaned_data['edu']
+            c = form.cleaned_data['cytokinesis']/100
+            m = form.cleaned_data['mitosis']/100
+            g2edu = form.cleaned_data["g2edu_time"]
+            l = form.cleaned_data['edu']/100
             edu = form.cleaned_data['edu_time']
 
             a, Xc, Xc_ccu, Xm, Xm_ccu, Xg2, Xg2_ccu, Xs, Xs_ccu, Xg1, Xg1_ccu = calculate(dt, c, m, g2edu, l, edu)

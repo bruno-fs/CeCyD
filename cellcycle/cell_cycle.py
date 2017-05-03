@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from __future__ import division
+from __future__ import print_function
 from math import *
 
 
@@ -78,7 +79,7 @@ if __name__ == "__main__":
     a, Xc, Xc_ccu, Xm, Xm_ccu, Xg2, Xg2_ccu, Xs, Xs_ccu, Xg1, Xg1_ccu = calculate(dt, c, m, g2edu, l, edu)
 
     output_str = '{:>3s}: {:0.3f} h / {:0.3f} ccu'
-    print('  a: {:0.5f}'.format(a))
+    # print('  a: {:0.5f}'.format(a))
     print(output_str.format('G1', Xg1, Xg1_ccu))
     print(output_str.format('S', Xs, Xs_ccu))
     print(output_str.format('G2', Xg2, Xg2_ccu))
