@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand" href="/">Project name</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -39,6 +39,14 @@
 </nav>
 
 <div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Testing MathJax</h3>
+    </div>
+    <div class="panel-body">
+      $$ x = \frac{1}{2} $$
+    </div>
+  </div>
   {% block content %}
   {% endblock %}
 </div>
@@ -50,6 +58,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-
+<!-- MathJax -->
+<script type="text/javascript" async
+        src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 </body>
 </html>
