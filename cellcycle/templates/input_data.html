@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <form class="form-horizontal" method="post" action="{% url 'home' %}">
-    {% csrf_token %}
+  <div class="col-lg-6">
+    <form class="form-horizontal" method="post" action="{% url 'home' %}">
+      {% csrf_token %}
 
-    {{ form }}
-    <button class="btn btn-default" type="submit">Submit</button>
+      {#    {{ form }}#}
+      {% for field in form %}
+        {#      {% if field.err %}#}
 
-  </form>
+        <div class="form-group">
+          <label for="{{ field.html_id }}" class="col-lg-3 control-label">{{ field.label }}</label>
+          <div class="input-group">
+
+            {{ field }}
+{#            <input class="form-control" id="{{ field.html_id }}" >#}
+            {#          <input class="form-control" id="{{ field.html_id }}">#}
+            {#          <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>#}
+{#            <span class="input-group-addon">{{ field.help_text }}</span>#}
+            <span class="input-group-addon">{{ field.help_text }}</span>
+          </div>
+        </div>
+      {% endfor %}
+      <button class="btn btn-default" type="submit">Submit</button>
+
+    </form>
+{##}
+  </div>
 {% endblock %}
