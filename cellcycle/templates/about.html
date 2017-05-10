@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  CeCyD estimates the duration of cell cycle phases as described by
+  <cite id="marcelones">da Silva et al.</cite>
+
+  $$ \alpha = \frac{\ln{ 2}}{T} $$
+
+  $$ \begin{equation}
+  x = \frac{\ln {(1-\frac{1}{2})}}{-\alpha}
+  \end{equation}
+  $$
+
+  $$
+  \begin{equation}
+
+  S = \frac{1}{ \alpha } \ln{[ L + e^{\alpha Z}]} - (Z+t)
+  \end{equation}
+  $$
+
+
+{# <cite></cite>#}
+{# cite articles https://www.iandevlin.com/blog/2012/02/html5/marking-up-a-bibliography-with-html5#}
+
+{% endblock %}
+
+
+{# mathjax eq numbering ref https://cdn.mathjax.org/mathjax/latest/test/sample-eqnum.html#}
