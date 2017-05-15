@@ -1,29 +1,72 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h3>About</h3>
 
-  CeCyD estimates the duration of cell cycle phases as described by
-  <cite id="marcelones">da Silva et al.</cite>
+  CeCyD estimates the duration of each cell cycle phase for any kind of cell subjected to BrdU/EdU
+  incorporation assays. In order to do so, CeCyD uses the inputs provided by the user to feed the
+  Willians <a href="#ref1">[1]</a> and Stanner & Till <a href="#ref2">[2]</a> equations, as proposed by
+  da Silva et al. <a href="#ref3">[3]</a>.
 
-  $$ \alpha = \frac{\ln{ 2}}{T} $$
+  CeCyD is a free software licensed under the terms of GNU-
 
-  $$ \begin{equation}
-  x = \frac{\ln {(1-\frac{1}{2})}}{-\alpha}
-  \end{equation}
-  $$
-
-  $$
-  \begin{equation}
-
-  S = \frac{1}{ \alpha } \ln{[ L + e^{\alpha Z}]} - (Z+t)
-  \end{equation}
-  $$
+  <h3>Methodology</h3>
+  This page provides a quick overview of the methodology applied. For a more in depth description, please check
+  da Silva <a href="#ref3">article</a>.
 
 
-{# <cite></cite>#}
-{# cite articles https://www.iandevlin.com/blog/2012/02/html5/marking-up-a-bibliography-with-html5#}
+  {##}
+  {#  In order to estimate the duration of mitosis and cytokinesis, CeCyD uses the Willians equation#}
+  {#  <a href="#ref1">(Willians, 1971, eq. 1)</a>#}
+
+
+  $$\begin{equation}
+  x = \frac{\ln {(1-\frac{y}{2})}}{-\alpha}
+  \end{equation}$$
+
+  Where $x$ is the duration of the stage in question, $y$ is the cumulative $\%$ cells from G1 to the stage in question,
+  $\alpha = \frac{\ln{2}}{T}$ (where $T$ is the generation time)
+
+  $$\begin{equation}
+  S = \frac{1}{\alpha} \ln{[L + e^{\alpha Z}]} - (Z+t)
+  \end{equation}$$
+
+  <p>Lorem ipsum dolor sit amet, netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+    ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum
+    sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum
+    orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam
+    dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+
+
+  <footer class="references">
+    <h3>References</h3>
+    <ol>
+      <li id="ref1">Williams, F. M. 1971. <cite>Dynamics of microbial populations</cite>. In: Patten BC, editor. Systems
+        analysis and simulation ecology, Vol 1. Academic Press (UK): Elsevier; p. 247-262.
+      </li>
+      <li id="ref2">Stanners, C. P. & Till, J. E. 1960. <cite>DNA synthesis in individual L-strain mouse cells</cite>.
+        Biochem. Biophvs. Acta, 37:406-419.
+      </li>
+      <li id="ref3">da Silva, M. S., Muñoz, P. A. M., Armelin, H. A., & Elias, M. C. 2017. <cite>Differences in the
+        Detection of BrdU/EdU Incorporation Assays Alter the Calculation for G1, S, and G2 Phases of the Cell Cycle in
+        Trypanosomatids</cite>. Journal of Eukaryotic Microbiology. 0:1-15.
+      </li>
+    </ol>
+  </footer>
+
 
 {% endblock %}
 
+{% comment %}
 
-{# mathjax eq numbering ref https://cdn.mathjax.org/mathjax/latest/test/sample-eqnum.html#}
+Cite articles in HTML5
+  https://www.iandevlin.com/blog/2012/02/html5/marking-up-a-bibliography-with-html5
+  http://synapticism.com/dev/marking-up-scholarly-references-with-html5/
+  https://github.com/PeerJ/paper-now
+
+MathJax
+  https://cdn.mathjax.org/mathjax/latest/test/sample-eqnum.html
+
+{% endcomment %}

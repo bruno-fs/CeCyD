@@ -37,17 +37,17 @@ class InputData(BootstrapForm):
     g2edu_time = forms.FloatField(
         min_value=0,
         required=True,
-        label='Minimum time to find 2 nuclei Edu-labeled in the same cell',
+        label='Minimum time to find 2 nuclei BrdU/EdU-labeled in the same cell',
         help_text='h')
     edu = forms.FloatField(
         min_value=0, max_value=100,
-        label='Percentage of positive cells after Edu pulse',
+        label='Percentage of positive cells after BrdU/Edu pulse',
         help_text='%',
     )
     edu_time = forms.FloatField(
         min_value=0,
         required=True,
-        label='Edu pulse duration',
+        label='BrdU/EdU pulse duration',
         help_text='h',
     )
 

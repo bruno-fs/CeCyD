@@ -37,7 +37,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about'%}">About</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -80,7 +80,18 @@
         crossorigin="anonymous"></script>
 <!-- MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+  MathJax.Hub.Config({
+  TeX: {
+    equationNumbers: {
+      autoNumber: "AMS"
+      }
+    },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+    processEscapes: true
+    }
+  });
+
 </script>
 <script type="text/javascript" async
         src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
