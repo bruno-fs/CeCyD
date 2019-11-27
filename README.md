@@ -3,13 +3,13 @@
 
 ## How to install
 ```
-    pip install -r requirements
+pip install -r requirements
 ```
 
 ## How to run the development server
 
 ```
-    python manage.py runserver
+python manage.py runserver
 ```
 Then open a browser and go to http://localhost:8000
 
